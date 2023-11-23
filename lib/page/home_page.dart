@@ -1,3 +1,7 @@
+import 'package:bangun_datar_c/page/lingkaran_page.dart';
+import 'package:bangun_datar_c/page/persegi_page.dart';
+import 'package:bangun_datar_c/page/segitiga_page.dart';
+import 'package:bangun_datar_c/page/trapesium_page.dart';
 import 'package:flutter/material.dart';
 
 class homepage extends StatelessWidget {
@@ -20,13 +24,31 @@ class homepage extends StatelessWidget {
               Expanded(
                 child: Row(
                   children: [
-                    Expanded(child: CustomMenu(title: "Persegi", imageAsset: "assets/persegi.png")),Expanded(child: CustomMenu(title: "Trapesium", imageAsset: "assets/trapesium.png")),
+                    Expanded(child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>PersegiPage()));
+                        },
+                        child: CustomMenu(title: "Persegi", imageAsset: "assets/persegi.png"))),
+                    Expanded(child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>TrapesiumPage()));
+                        },
+                        child: CustomMenu(title: "Trapesium", imageAsset: "assets/trapesium.png"))),
                   ],
                 ),
               ),
                   Row(
                     children: [
-                      Expanded(child: CustomMenu(title: "Lingkaran", imageAsset: "assets/lingkaran.png")),Expanded(child: CustomMenu(title: "Segitiga", imageAsset: "assets/segitiga.jpg")),
+                      Expanded(child: InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>LingkaranPage()));
+                          },
+                          child: CustomMenu(title: "Lingkaran", imageAsset: "assets/lingkaran.png"))),
+                      Expanded(child: InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>SegitigaPage()));
+                          },
+                          child: CustomMenu(title: "Segitiga", imageAsset: "assets/segitiga.jpg"))),
                     ],
                   ),
                 ],
